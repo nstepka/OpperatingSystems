@@ -28,7 +28,7 @@ void *producer(void *pno)
   for(int i=0; i< MaxItems; i++){
     item = rand();  // Produce a random item
     sem_wait(&empty);
-    pthread_mutex_lock(&mutex)
+    pthread_mutex_lock(&mutex);
     buffer[in] = item;
     printf("producer %d: Insert Item %d at %d\n", *((int *)pno),buffer[in],in);
     sleep(sleepTime);
