@@ -2,6 +2,7 @@
 #include <semaphore.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
 
 /*
 This program provides a possible solution for the produce-conseumer
