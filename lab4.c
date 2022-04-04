@@ -73,7 +73,7 @@ int main()
     pthread_join(pro[i], NULL);
   }
   for(int i=0; i < 5; i++ ){
-    pthread_join(con[i], NULL)
+    pthread_join(con[i], NULL);
   }
 
   pthread_mutex_destroy(&mutex);
