@@ -45,7 +45,7 @@ void *consumer(void *cno)
     sem_wait(&full);
     pthread_mutex_lock(&mutex);
     int item = buffer[out];
-     counter = counter + item;
+    counter = counter + item;
     printf("Consumer %d: Remove Item %d from %d\n", * ((int *)cno),item,out);
     printf("The total count for items is %d\n", counter);
     sleep(sleepTime);
