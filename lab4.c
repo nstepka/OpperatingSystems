@@ -19,6 +19,7 @@ sem_t empty;
 sem_t full;
 int in = 0;
 int out = 0;
+int counter = 0;
 int sleepTime = 5;  // let producer and consumer run slowly
 int buffer[BufferSize];
 pthread_mutex_t mutex;
@@ -44,7 +45,9 @@ void *consumer(void *cno)
     sem_wait(&full);
     pthread_mutex_lock(&mutex);
     int item = buffer[out];
+     counter = counter + item;
     printf("Consumer %d: Remove Item %d from %d\n", * ((int *)cno),item,out);
+    printf("The total count for items is %d\n", counter);
     sleep(sleepTime);
     out = (out+1)%BufferSize;
     pthread_mutex_unlock(&mutex);
